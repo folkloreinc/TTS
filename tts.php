@@ -15,7 +15,12 @@ $text = $_REQUEST['text'];
 $voice = isset($_REQUEST['voice']) && in_array($_REQUEST['voice'],$VOICES) ? $_REQUEST['voice']:'en';
 
 //Output mp3
-header('Content-type: audio/mpeg;');
+if(!isset($_REQUEST['debug'])) {
+	header('Content-type: audio/mpeg;');
+} else {
+	ini_set('display_errors',1);
+	error_reporting(E_ALL);
+}
 if(!isset($_REQUEST['text']) || empty($_REQUEST['text'])) die();
 system(ESPEAK_PATH.' -v '.escapeshellarg($voice).' '.escapeshellarg($text).' --stdout | '.LAME_PATH.' --quiet - -');
 exit();
