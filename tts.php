@@ -10,7 +10,7 @@ $PROGRAMS = array(
 
 	//Say
 	'say' => array(
-		'path' => '/usr/bin/say -v %s -o %s',
+		'path' => '/usr/bin/say -v %s -o %s %s',
 		'format' => 'aiff',
 		'voices' => array(
 			'Alex',
@@ -29,7 +29,7 @@ $PROGRAMS = array(
 
 	//espeak
 	'espeak' => array(
-		'path' => '/usr/local/bin/speak -v %s -w %s',
+		'path' => '/usr/local/bin/speak -v %s -w %s %s',
 		'format' => 'wav',
 		'voices' => array(
 			'fr',
