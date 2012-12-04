@@ -57,7 +57,12 @@ if(!isset($PROGRAMS[$_REQUEST['program']])) die();
 
 //Parameters
 $program = $PROGRAMS[$_REQUEST['program']];
-$mix = isset($_REQUEST['method']) && !empty($_REQUEST['method']) ? (in_array($_REQUEST['method'],$METHODS) ? $_REQUEST['method']:$METHODS[0]):null;
+if(isset($_REQUEST['method']) && !empty($_REQUEST['method'])) {
+	$mix =  in_array($_REQUEST['method'],$METHODS) ? $_REQUEST['method']:$METHODS[0];
+} else {
+	$mix =  null;
+}
+
 
 //Multiple files
 if($mix) {
