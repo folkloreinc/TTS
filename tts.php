@@ -73,7 +73,7 @@ if($mix) {
 	$commandParts = array();
 	$tmpPaths = array();
 	for($i = 0; $i < sizeof($texts); $i++) {
-		$tmpPath = tempnam('/tmp','ttsphp_').'.'$program['format'];
+		$tmpPath = tempnam('/tmp','ttsphp_').'.'.$program['format'];
 		$voice = isset($voices[$i]) && in_array($voices[$i],$program['voices']) ? $voices[$i]:$program['voices'][0];
 		$command = sprintf($program['path'], escapeshellarg($voice), escapeshellarg($tmpPath), escapeshellarg($texts[$i]));
 		exec($command);
