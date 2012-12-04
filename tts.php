@@ -68,7 +68,11 @@ if(isset($_REQUEST['mix']) && !empty($_REQUEST['mix'])) {
 if($mix) {
 
 	$texts = is_array($_REQUEST['text']) ? $_REQUEST['text']:array($_REQUEST['text']);
-	$voices = is_array($_REQUEST['voice']) ? $_REQUEST['voice']:array($_REQUEST['voice']);
+	if(!isset($_REQUEST['voice'])) {
+		$voices = array($program['voices'][0]);
+	} else {
+		$voices = is_array($_REQUEST['voice']) ? $_REQUEST['voice']:array($_REQUEST['voice']);
+	}
 
 	$commandParts = array();
 	$tmpPaths = array();
