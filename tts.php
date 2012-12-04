@@ -57,8 +57,8 @@ if(!isset($PROGRAMS[$_REQUEST['program']])) die();
 
 //Parameters
 $program = $PROGRAMS[$_REQUEST['program']];
-if(isset($_REQUEST['method']) && !empty($_REQUEST['method'])) {
-	$mix =  in_array($_REQUEST['method'],$METHODS) ? $_REQUEST['method']:$METHODS[0];
+if(isset($_REQUEST['mix']) && !empty($_REQUEST['mix'])) {
+	$mix =  in_array($_REQUEST['mix'],$METHODS) ? $_REQUEST['mix']:$METHODS[0];
 } else {
 	$mix =  null;
 }
