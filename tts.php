@@ -92,7 +92,7 @@ if($mix) {
 	$text = $_REQUEST['text'];
 	$voice = isset($_REQUEST['voice']) && in_array($_REQUEST['voice'],$program['voices']) ? $_REQUEST['voice']:$program['voices'][0];
 
-	$tmpPath = tempnam('/tmp','ttsphp_').'.'$program['format'];
+	$tmpPath = tempnam('/tmp','ttsphp_').'.'.$program['format'];
 	$command = sprintf($program['path'], escapeshellarg($voice), escapeshellarg($tmpPath), escapeshellarg($text));
 	exec($command);
 
