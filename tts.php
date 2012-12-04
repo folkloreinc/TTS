@@ -2,7 +2,7 @@
 
 
 //Change path depending on your system
-define('SOX_PATH', '/usr/bin/sox');
+define('SOX_PATH', '/usr/local/bin/sox');
 define('LAME_PATH', '/usr/local/bin/lame');
 
 //Programs
