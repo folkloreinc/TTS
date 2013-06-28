@@ -15,4 +15,6 @@ if(!isset($_REQUEST['debug']) || $_REQUEST['debug'] != 'true') {
 $url = $_REQUEST['url'];
 $speed = isset($_REQUEST['speed']) && (float)$_REQUEST['speed'] > 0 ? (float)$_REQUEST['speed']:10;
 
-system('curl '.escapeshellarg($url).' | '.SOX_PATH.' -t mp3 - -t mp3 - speed '.escapeshellarg($speed));
+$tmpPath = tempnam('/tmp','ttsphp_').'.mp3';
+exec('curl '.escapeshellarg($url).' > '.escapeshellarg($tmpPath));
+system(SOX_PATH.' '.escapeshellarg($tmpPath).' -t mp3 - speed '.escapeshellarg($speed));
