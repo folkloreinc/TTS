@@ -17,4 +17,5 @@ $speed = isset($_REQUEST['speed']) && (float)$_REQUEST['speed'] > 0 ? (float)$_R
 
 $tmpPath = tempnam('/tmp','ttsphp_').'.mp3';
 exec('curl '.escapeshellarg($url).' > '.escapeshellarg($tmpPath));
+die(SOX_PATH.' '.escapeshellarg($tmpPath).' -t mp3 - speed '.escapeshellarg($speed));
 system(SOX_PATH.' '.escapeshellarg($tmpPath).' -t mp3 - speed '.escapeshellarg($speed));
