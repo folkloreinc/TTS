@@ -2,8 +2,8 @@
 
 
 //Change path depending on your system
-define('SOX_PATH', '/usr/local/bin/sox');
-define('LAME_PATH', '/usr/local/bin/lame');
+define('SOX_PATH', '/usr/bin/sox');
+define('LAME_PATH', '/usr/bin/lame');
 
 //Programs
 $PROGRAMS = array(
@@ -29,7 +29,7 @@ $PROGRAMS = array(
 
 	//espeak
 	'espeak' => array(
-		'path' => '/usr/local/bin/speak -v %s -w %s %s',
+		'path' => '/usr/bin/espeak -v %s -w %s %s',
 		'format' => 'wav',
 		'voices' => array(
 			'fr',

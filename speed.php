@@ -3,7 +3,7 @@
 
 //Change path depending on your system
 define('SOX_PATH', '/usr/bin/sox');
-define('LAME_PATH', '/usr/local/bin/lame');
+define('LAME_PATH', '/usr/bin/lame');
 
 //Set headers
 if(!isset($_REQUEST['debug']) || $_REQUEST['debug'] != 'true') {
