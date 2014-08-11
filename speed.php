@@ -17,8 +17,8 @@ $url = isset($_REQUEST['url']) ? $_REQUEST['url']:null;
 $speed = isset($_REQUEST['speed']) && (float)$_REQUEST['speed'] > 0 ? (float)$_REQUEST['speed']:4;
 $reverb = isset($_REQUEST['reverb']) && (integer)$_REQUEST['reverb'] >= 0 ? (integer)$_REQUEST['reverb']:80;
 
-if(!preg_match('/^https?\:\/\//',$url) || filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
-	die();
+if(!preg_match('/^https?\:\/\//',$url)) {
+	die('WRONG URL');
 }
 
 system('curl '.escapeshellarg($url).' | '.SOX_PATH.' -t mp3 - -t wav - speed '.escapeshellarg($speed).' reverb '.escapeshellarg($reverb).' echo 0.8 0.9 1000.0 0.3 1800.0 0.25 | '.LAME_PATH.' -b 72 --quiet - -');
