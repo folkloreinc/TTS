@@ -14,7 +14,7 @@ if(!isset($_REQUEST['debug']) || $_REQUEST['debug'] != 'true') {
 }
 
 $url = isset($_REQUEST['url']) ? $_REQUEST['url']:null;
-$noise = '0.0'.(isset($_REQUEST['noise']) && (integer)$_REQUEST['noise'] >= 0 ? (integer)$_REQUEST['noise']:rand(1,5));
+$noise = '0.0'.(isset($_REQUEST['noise']) && $_REQUEST['noise'] >= 0 ? $_REQUEST['noise']:rand(1,5));
 
 if(!preg_match('/^https?\:\/\//',$url)) {
     die('WRONG URL');
