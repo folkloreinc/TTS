@@ -29,3 +29,5 @@ exec($command1);
 $command2 = 'sox %s -p synth whitenoise vol %s | sox -m %s - -t wav - | '.LAME_PATH.' -b 72 --quiet - -';
 $command2 = sprintf($command2, $tmpPath, $noise, $tmpPath);
 system($command2);
+
+unlink($tmpPath);
