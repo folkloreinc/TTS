@@ -15,9 +15,9 @@ if(!isset($_REQUEST['debug']) || $_REQUEST['debug'] != 'true') {
 
 $url = isset($_REQUEST['url']) ? $_REQUEST['url']:null;
 $noise = '0.0'.(isset($_REQUEST['noise']) && $_REQUEST['noise'] >= 0 ? $_REQUEST['noise']:rand(1,5));
-$pitch = (isset($_REQUEST['pitch']) && (int)$_REQUEST['pitch'] != 0 ? $_REQUEST['pitch']:0;
-$speed = (isset($_REQUEST['speed']) && (int)$_REQUEST['speed'] != 0 ? $_REQUEST['speed']:1;
-$tempo = (isset($_REQUEST['tempo']) && (int)$_REQUEST['tempo'] != 0 ? $_REQUEST['tempo']:1;
+$pitch = isset($_REQUEST['pitch']) && (int)$_REQUEST['pitch'] != 0 ? $_REQUEST['pitch']:0;
+$speed = isset($_REQUEST['speed']) && (int)$_REQUEST['speed'] != 0 ? $_REQUEST['speed']:1;
+$tempo = isset($_REQUEST['tempo']) && (int)$_REQUEST['tempo'] != 0 ? $_REQUEST['tempo']:1;
 
 if(!preg_match('/^https?\:\/\//',$url)) {
     die('WRONG URL');
